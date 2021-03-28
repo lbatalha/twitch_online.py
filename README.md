@@ -24,14 +24,20 @@ The credentials file should be a simple yaml file with `client_id` and `client_s
 variables
 ```
 
-# requirements
+### Example config
+```yaml
+client_id: 'asdfhjsadfsadhfhsdfjghskdfg'
+client_secret: 'asdfjgsdfhgsdfgjhdsjfgjkgdfgh'
+```
+
+# Requirements
 
 * pyyaml
 * requests
 
 ## Return codes:
 
-0 - Stream is live
-1 - Stream is not live
-2 - Unhandled Twitch API HTTP status code
-128 - Failed to parse credentials file
+0. Stream is live
+1. Stream is not live
+2. Unhandled Twitch API HTTP status code
+128. Failed to parse credentials file
