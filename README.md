@@ -36,8 +36,9 @@ client_secret: 'asdfjgsdfhgsdfgjhdsjfgjkgdfgh'
 * requests
 
 ## Return codes:
-
-0. Stream is live
-1. Stream is not live
-2. Unhandled Twitch API HTTP status code
-128. Failed to parse credentials file
+```txt
+0 - Stream is live
+1 - Stream is not live
+2 - Unhandled Twitch API HTTP status code
+128 - Failed to parse credentials file
+```
