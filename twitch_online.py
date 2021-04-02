@@ -14,6 +14,14 @@ parser.add_argument('CHANNEL', help="Channel to check")
 args = vars(parser.parse_args())
 token_file = args['temp_file']
 
+# Init temp token file
+if not os.path.isfile(token_file):
+    with open(token_file, 'w') as f:
+        f.write('')
+    # only the calling user should be able to read this
+    os.chmod(token_file, 0o600)
+
+
 # Handle reading config yaml
 with open(args['auth_file'], 'r') as f:
     try:
@@ -25,13 +33,6 @@ with open(args['auth_file'], 'r') as f:
         print("Failed to parse credentials file", args['auth_file'])
         print(pe)
         sys.exit(128)
-
-# Init temp token file
-if not os.path.isfile(token_file):
-    with open(token_file, 'w') as f:
-        f.write('')
-    # only the calling user should be able to read this
-    os.chmod(token_file, 0o600)
 
 
 def check_status():
